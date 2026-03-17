@@ -1,0 +1,100 @@
+{
+  "brand": "Nectar",
+  "retailer": "Sainsbury's",
+  "reporting_period": "Q1 2026",
+  "channels": ["In-Store", "On-Site", "Off-Site"],
+  "skus": [
+    {"id": "SKU001", "name": "Pepsi Max 2L", "category": "Soft Drinks", "brand": "Pepsi", "price": 1.89},
+    {"id": "SKU002", "name": "Walkers Ready Salted 6pk", "category": "Crisps & Snacks", "brand": "Walkers", "price": 2.50},
+    {"id": "SKU003", "name": "Coca-Cola Zero 6pk", "category": "Soft Drinks", "brand": "Coca-Cola", "price": 4.00},
+    {"id": "SKU004", "name": "Cadbury Dairy Milk 200g", "category": "Confectionery", "brand": "Cadbury", "price": 1.75},
+    {"id": "SKU005", "name": "Heinz Baked Beans 4pk", "category": "Tinned Goods", "brand": "Heinz", "price": 2.20},
+    {"id": "SKU006", "name": "Andrex Toilet Tissue 9pk", "category": "Household", "brand": "Andrex", "price": 5.50},
+    {"id": "SKU007", "name": "Warburtons Medium White 800g", "category": "Bakery", "brand": "Warburtons", "price": 1.20},
+    {"id": "SKU008", "name": "Fairy Liquid 433ml", "category": "Household", "brand": "Fairy", "price": 1.89},
+    {"id": "SKU009", "name": "Tropicana Orange Juice 1.35L", "category": "Juices", "brand": "Tropicana", "price": 3.50},
+    {"id": "SKU010", "name": "Kellogg's Corn Flakes 750g", "category": "Cereals", "brand": "Kellogg's", "price": 3.00},
+    {"id": "SKU011", "name": "Müller Corner Strawberry 4pk", "category": "Dairy", "brand": "Müller", "price": 2.80},
+    {"id": "SKU012", "name": "Hellmann's Real Mayo 430g", "category": "Condiments", "brand": "Hellmann's", "price": 3.20},
+    {"id": "SKU013", "name": "McVitie's Digestives 400g", "category": "Biscuits", "brand": "McVitie's", "price": 1.60},
+    {"id": "SKU014", "name": "Pringles Original 200g", "category": "Crisps & Snacks", "brand": "Pringles", "price": 2.25},
+    {"id": "SKU015", "name": "Ben & Jerry's Cookie Dough 465ml", "category": "Ice Cream", "brand": "Ben & Jerry's", "price": 5.00},
+    {"id": "SKU016", "name": "Lurpak Butter 500g", "category": "Dairy", "brand": "Lurpak", "price": 4.50},
+    {"id": "SKU017", "name": "Ariel 3in1 Pods 38pk", "category": "Laundry", "brand": "Ariel", "price": 9.00},
+    {"id": "SKU018", "name": "Haribo Starmix 200g", "category": "Confectionery", "brand": "Haribo", "price": 1.00},
+    {"id": "SKU019", "name": "Nescafé Gold Blend 200g", "category": "Hot Drinks", "brand": "Nescafé", "price": 6.50},
+    {"id": "SKU020", "name": "Robinsons Squash 1L", "category": "Soft Drinks", "brand": "Robinsons", "price": 2.00},
+    {"id": "SKU021", "name": "Philadelphia Cream Cheese 300g", "category": "Dairy", "brand": "Philadelphia", "price": 2.75},
+    {"id": "SKU022", "name": "Hovis Wholemeal 800g", "category": "Bakery", "brand": "Hovis", "price": 1.30},
+    {"id": "SKU023", "name": "Persil Non-Bio 30 Wash", "category": "Laundry", "brand": "Persil", "price": 8.50},
+    {"id": "SKU024", "name": "Activia Yogurt Variety 8pk", "category": "Dairy", "brand": "Activia", "price": 3.50},
+    {"id": "SKU025", "name": "Rustlers Quarter Pounder", "category": "Ready Meals", "brand": "Rustlers", "price": 2.50}
+  ],
+  "channel_performance": {
+    "In-Store": {
+      "impressions": 2850000,
+      "clicks": 142500,
+      "conversions": 28500,
+      "revenue": 156750,
+      "roas": 5.2,
+      "ctr": 0.05,
+      "cvr": 0.20,
+      "shelf_positions": {"premium": 45, "eye_level": 38, "floor": 17},
+      "endcap_activations": 12
+    },
+    "On-Site": {
+      "impressions": 4200000,
+      "clicks": 168000,
+      "conversions": 33600,
+      "revenue": 184800,
+      "roas": 6.1,
+      "ctr": 0.04,
+      "cvr": 0.20,
+      "placements": ["homepage_banner", "search_results", "category_pages", "basket_page"],
+      "search_share": 0.34
+    },
+    "Off-Site": {
+      "impressions": 8500000,
+      "clicks": 85000,
+      "conversions": 12750,
+      "revenue": 70125,
+      "roas": 2.9,
+      "ctr": 0.01,
+      "cvr": 0.15,
+      "channels": {
+        "TV": {"spend": 12000, "reach": 3200000, "frequency": 2.8},
+        "Social": {"spend": 8500, "reach": 2800000, "ctr": 0.018, "platform": "Meta/TikTok"},
+        "Display": {"spend": 3700, "reach": 2500000, "ctr": 0.004}
+      }
+    }
+  },
+  "weekly_trends": {
+    "weeks": ["W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9", "W10", "W11", "W12"],
+    "In-Store": [18500, 19200, 21000, 22800, 20100, 19800, 23500, 25200, 24100, 22900, 26800, 28500],
+    "On-Site": [22000, 23500, 25800, 27200, 24600, 23800, 28900, 31200, 29800, 27600, 32400, 33600],
+    "Off-Site": [8500, 9200, 10800, 11500, 9800, 9500, 12200, 13800, 12900, 11800, 14200, 12750]
+  },
+  "promo_campaigns": [
+    {"name": "Nectar Price Drop - Soft Drinks", "channel": "In-Store", "week": "W3", "uplift": 0.34, "skus": ["SKU001", "SKU003", "SKU020"]},
+    {"name": "Spring Fresh Homepage Takeover", "channel": "On-Site", "week": "W5", "uplift": 0.28, "skus": ["SKU006", "SKU008", "SKU017"]},
+    {"name": "Snack Attack TikTok", "channel": "Off-Site", "week": "W7", "uplift": 0.45, "skus": ["SKU002", "SKU014", "SKU018"]},
+    {"name": "Easter Treats Endcap", "channel": "In-Store", "week": "W9", "uplift": 0.52, "skus": ["SKU004", "SKU015", "SKU018"]},
+    {"name": "Loyalty Boost Email", "channel": "On-Site", "week": "W11", "uplift": 0.38, "skus": ["SKU019", "SKU024", "SKU010"]}
+  ],
+  "customer_segments": {
+    "Loyalists": {"size": 0.22, "avg_basket": 68.50, "frequency": 2.8, "nectar_points_avg": 4200},
+    "Deal Hunters": {"size": 0.31, "avg_basket": 42.20, "frequency": 1.9, "nectar_points_avg": 1800},
+    "Convenience Shoppers": {"size": 0.28, "avg_basket": 28.50, "frequency": 3.2, "nectar_points_avg": 950},
+    "Premium Browsers": {"size": 0.19, "avg_basket": 95.00, "frequency": 1.2, "nectar_points_avg": 6500}
+  },
+  "top_categories_by_roas": [
+    {"category": "Soft Drinks", "roas": 6.8, "spend": 15000},
+    {"category": "Crisps & Snacks", "roas": 5.9, "spend": 12000},
+    {"category": "Confectionery", "roas": 5.4, "spend": 11000},
+    {"category": "Dairy", "roas": 4.8, "spend": 9500},
+    {"category": "Bakery", "roas": 4.2, "spend": 8000},
+    {"category": "Household", "roas": 3.9, "spend": 14000},
+    {"category": "Hot Drinks", "roas": 3.5, "spend": 10000},
+    {"category": "Ready Meals", "roas": 2.8, "spend": 7500}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "nectar-retail-media",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev:proxy": "node server.js",
+    "dev:ui": "cd ui && npm run dev",
+    "install:ui": "cd ui && npm install",
+    "build:ui": "cd ui && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.3"
+  }
+}
