@@ -46,11 +46,20 @@ const TIME_RANGES = [
   'YTD 2026',
 ];
 
-export default function AgentBuilder({ onSubmit, isLoading }) {
+export default function AgentBuilder({ onSubmit, isLoading, initialPrompt, onPromptConsumed }) {
   const [prompt, setPrompt] = useState('');
   const [channel, setChannel] = useState('all');
   const [timeRange, setTimeRange] = useState('Q1 2026');
   const [activePreset, setActivePreset] = useState(null);
+
+  // Accept injected prompt from Common Questions
+  React.useEffect(() => {
+    if (initialPrompt) {
+      setPrompt(initialPrompt);
+      setActivePreset(null);
+      if (onPromptConsumed) onPromptConsumed();
+    }
+  }, [initialPrompt]);
 
   const handlePreset = (preset) => {
     setActivePreset(preset.id);
