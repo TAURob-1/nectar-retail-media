@@ -2,10 +2,10 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "nixpacks",
-    "buildCommand": "cd ui && npm install && npm run build && cd .."
+    "buildCommand": "pip install -r api/requirements.txt && cd ui && npm install && npm run build && cd .."
   },
   "deploy": {
-    "startCommand": "cd api && pip install -r requirements.txt --quiet && uvicorn main:app --host 0.0.0.0 --port $PORT",
+    "startCommand": "cd api && uvicorn main:app --host 0.0.0.0 --port $PORT",
     "restartPolicyType": "on_failure",
     "restartPolicyMaxRetries": 5
   }
