@@ -3,7 +3,7 @@ nixPkgs = ["nodejs_20", "python311", "python311Packages.pip"]
 
 [phases.install]
 cmds = [
-  "pip install -r api/requirements.txt",
+  "pip install --break-system-packages -r api/requirements.txt",
   "cd ui && npm install && cd .."
 ]
 
