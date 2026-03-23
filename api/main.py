@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Optional, List
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import anthropic
 
@@ -287,6 +288,26 @@ Replace UNIQUE_ID with a random string to avoid canvas ID conflicts. Use the exa
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# ─── Serve React Frontend ────────────────────────────────────────────────────
+# In production, FastAPI serves the built React app directly (no Node proxy needed)
+STATIC_DIR = Path(__file__).parent.parent / "ui" / "dist"
+if STATIC_DIR.exists():
+
+    @app.get("/", include_in_schema=False)
+    async def serve_index():
+        """Serve React SPA root"""
+        index = STATIC_DIR / "index.html"
+        if index.exists():
+            return FileResponse(str(index))
+        raise HTTPException(status_code=404, detail="Frontend not built")
+
+    # Mount the full dist dir for SPA client-side routing (must be LAST)
+    app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="frontend")
+else:
+    logger.warning(f"Frontend dist not found at {STATIC_DIR} — serving API only")
+
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
+    port = int(os.getenv("PORT", 8001))
+    uvicorn.run(app, host="0.0.0.0", port=port)
