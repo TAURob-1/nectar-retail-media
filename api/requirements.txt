@@ -4,3 +4,5 @@ anthropic>=0.40.0
 python-pptx>=0.6.23
 pydantic>=2.0.0
 python-multipart>=0.0.9
+matplotlib>=3.7.0
+numpy>=1.24.0
