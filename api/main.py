@@ -292,17 +292,28 @@ Replace UNIQUE_ID with a random string to avoid canvas ID conflicts. Use the exa
 # In production, FastAPI serves the built React app directly (no Node proxy needed)
 STATIC_DIR = Path(__file__).parent.parent / "ui" / "dist"
 if STATIC_DIR.exists():
+    # Serve static assets (JS, CSS, images) from the dist/assets dir
+    assets_dir = STATIC_DIR / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
 
     @app.get("/", include_in_schema=False)
     async def serve_index():
         """Serve React SPA root"""
-        index = STATIC_DIR / "index.html"
-        if index.exists():
-            return FileResponse(str(index))
-        raise HTTPException(status_code=404, detail="Frontend not built")
+        return FileResponse(str(STATIC_DIR / "index.html"))
 
-    # Mount the full dist dir for SPA client-side routing (must be LAST)
-    app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="frontend")
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa(full_path: str):
+        """SPA catch-all: serve index.html for all non-API, non-asset routes"""
+        # Let FastAPI handle /api/* and /health routes normally
+        if full_path.startswith("api/") or full_path in ("health", "docs", "openapi.json", "redoc"):
+            raise HTTPException(status_code=404)
+        # Serve actual file if it exists (vite assets, favicon, etc.)
+        file_path = STATIC_DIR / full_path
+        if file_path.is_file():
+            return FileResponse(str(file_path))
+        # All other routes: serve index.html (client-side routing)
+        return FileResponse(str(STATIC_DIR / "index.html"))
 else:
     logger.warning(f"Frontend dist not found at {STATIC_DIR} — serving API only")
 
